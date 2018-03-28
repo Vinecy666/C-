@@ -1,0 +1,27 @@
+#include <stdio.h>
+int fun(char *s,int num);
+int main()
+{
+ char s[10];
+ gets(s);
+ fun(s,7);
+ printf("%s",s);
+ return 0;
+ }
+ int fun(char *s,int num)
+{
+  int len=num, i=1,j=1;
+  for(i=1;i<len-1;i++)
+  {
+    for(j=1;j<i;j++)
+    {
+      if(s[i]>s[j])
+      {
+        char *t;
+        t=s[i];
+        s[i]=s[j];
+        s[j]=t;
+      }
+    }
+  }
+}
