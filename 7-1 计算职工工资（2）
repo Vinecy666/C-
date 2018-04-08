@@ -1,0 +1,27 @@
+#include <stdio.h>
+  struct staff
+{
+	char name[1000];
+	float  fixation;
+	float  floating;
+	float  outlay;
+	float  salary;
+}a[1000];
+int main()
+{
+
+	int i,n;
+	scanf("%d",&n);
+
+	for(i=0;i<n;i++)
+	{
+		scanf("%s%f%f%f",a[i].name,&a[i].fixation,&a[i].floating,&a[i].outlay);
+		a[i].salary=a[i].fixation+a[i].floating-a[i].outlay;
+	 	 
+  }
+  for(i=0;i<n;i++)
+  {
+    printf("%s %.2f\n",a[i].name,a[i].salary); 
+  }
+ return 0;
+}
