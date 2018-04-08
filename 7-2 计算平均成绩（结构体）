@@ -1,0 +1,30 @@
+#include <stdio.h>
+struct student
+{
+  char s[1000];
+  char name[1000];
+  int code;
+  
+};
+int main()
+{
+  int i,N,sum=0;
+  double average;
+  struct student a[1000];
+  scanf("%d",&N);
+  for(i=0;i<N;i++)
+  {
+    scanf("%s %s %d",a[i].s,a[i].name,&a[i].code);
+    sum = sum + a[i].code;
+  }
+  average=sum/N*1.0;
+  printf("%.2f\n",average);
+  for(i=0;i<N;i++)
+  {
+    if(a[i].code<average)
+    {
+      printf("%s %s\n",a[i].name,a[i].s);
+    }
+  }
+  return 0;
+}
