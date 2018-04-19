@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+	int n,m,d,s ;
+	while(scanf("%d%d",&n,&m)!=EOF)
+	{
+		if(n>m)
+		{
+			int t;
+			t = m;m=n;n=t;
+		}
+		d = s = 0;
+		int i;
+		for(i = n;i<=m;i++)
+		{
+			if(i%2==0)
+			{
+			d = d+(i*i);	
+			}else s = s+(i*i*i);
+		}
+		printf("%d %d\n",d,s);
+	}
+}
