@@ -1,0 +1,23 @@
+#include <stdio.h>  
+int main()  
+{  
+    int year,month,day;  
+    int number;  
+    int i;  
+    while (scanf("%d/%d/%d",&year,&month,&day)!=EOF)  
+    {  
+        number=day;  
+        for(i=1; i<month; i++)  
+        {    
+            if(i==1||i==3||i==5||i==7||i==8||i==10||i==12)  
+                number+=31;  
+            else   
+            if (i==4||i==6||i==9||i==11)  
+                number+=30;  
+            else  
+                number+=((year%4==0&&year%100!=0)||year%400==0)?29:28;  
+        }  
+        printf("%d\n",number);  
+    }  
+    return 0;  
+}  
