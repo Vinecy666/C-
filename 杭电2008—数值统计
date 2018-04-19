@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main()
+{  
+	int n;
+   
+         
+	while(scanf("%d",&n)!=EOF)
+	{ if(n==0)
+	{
+		break;
+	}
+		
+		int i,num1 = 0,num2 = 0,num3 = 0;
+		float x;
+		for(i = 0;i<n;i++)
+		{ 
+			scanf("%f",&x);
+			if(x<0){num1++;
+			}else
+			if(x==0) {num2++;
+			}
+			else    num3++;
+		}
+		printf("%d %d %d\n",num1,num2,num3);
+	}
+	return 0;
+}
