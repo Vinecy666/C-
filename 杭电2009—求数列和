@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <math.h> 
+int main()
+{
+   float n;
+   while(scanf("%f",&n)!=EOF)
+   {
+   	 int i,m;
+   	 float sum = 0;
+   	 scanf("%d",&m);
+   	 for(i = 0;i<m;i++)
+   	 {
+   	    sum = sum + n;
+		n = sqrt(n);	
+	 }
+	 printf("%.2f\n",sum);
+   }
+   return 0;	
+} 
