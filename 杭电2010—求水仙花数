@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main()
+{
+    int m,n;
+    while (scanf ("%d%d",&m,&n)!=EOF)
+    {
+        int x,y,z,i;
+        if (m<=n)
+        {
+            int flag=0;
+            for (i=m;i<=n;i++)
+            {
+                x=i/100;
+                y=i/10%10;
+                z=i%10;
+            if (i==x*x*x+y*y*y+z*z*z)
+            {
+                if (flag==1)
+                printf (" ");
+            printf ("%d",i);
+            flag=1;
+            }
+            }
+    if (flag==0)
+    printf ("no\n");
+    else printf ("\n");
+        }
+    }
+    return 0;
+}
