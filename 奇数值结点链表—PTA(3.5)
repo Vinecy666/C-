@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct ListNode {
+    int data;
+    struct ListNode *next;
+};
+
+struct ListNode *readlist();
+struct ListNode *getodd( struct ListNode **L );
+void printlist( struct ListNode *L )
+{
+     struct ListNode *p = L;
+     while (p) {
+           printf("%d ", p->data);
+           p = p->next;
+     }
+     printf("\n");
+}
+
+int main()
+{
+    struct ListNode *L, *Odd;
+    L = readlist();
+    Odd = getodd(&L);
+    printlist(Odd);
+    printlist(L);
+
+    return 0;
+}
+struct ListNode *readlist()
+{
+  struct ListNode *head=NULL,*p=NULL,*tail=NULL;
+  int data;
+  scanf("%d",&data);
+  while(data!=-1)
+  {
+    p=(struct ListNode *)malloc(sizeof(struct ListNode));
+    p->data=data;
+    p->next=NULL;
+    if(head==NULL)
+    {
+      head=p;
+    }else
+    {
+      tail->next=p;
+    }
+    tail=p;
+    scanf("%d",&data);
+  }
+  return head;
+}
+struct ListNode *getodd( struct ListNode **L )
+{ 
+   struct ListNode *p=*L,*a,*b,*head1,*head2,*p1=NULL,*p2=NULL;
+    head1=(struct ListNode*)malloc(sizeof(struct ListNode));
+    head2=(struct ListNode*)malloc(sizeof(struct ListNode));
+    head1->next=NULL;
+    head2->next=NULL;
+    a=head1;
+    b=head2;
+    for(;p!=NULL;p=p->next)
+    {
+        if(p->data%2!=0)
+        {
+          if(p1==NULL)
+          p1=p;
+          else
+            a->next=p;
+            a=p;
+        }
+        else
+        {
+          if(p2==NULL)
+          p2=p;
+          else
+            b->next=p;
+            b=p;
+        }
+    }
+    a->next=NULL;
+    b->next=NULL;
+    *L=p2;
+    return p1;
+} 
