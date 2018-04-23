@@ -1,0 +1,39 @@
+#include <stdio.h>
+int main()
+{
+	int i,x,y,flag;
+	int m,s,j;
+	while(scanf("%d%d",&x,&y)!=EOF)
+	{
+		if(x==0&&y==0)
+		{
+			break;
+		}
+		
+		for(i=x,m=0;i<=y;i++)
+		{
+		
+			flag = 1;
+			s = i*i+i+41;
+			for(j=2;j<=s/2;j++)
+			{
+				if(s%j==0)
+				{
+					flag = 0;
+				}
+			}
+			if(flag == 1)
+			{
+				m++;
+			}
+		}
+		if(m == y-x+1)
+		{
+			printf("OK\n");
+		}else
+		{
+			printf("Sorry\n");
+		}
+	}
+	return 0;
+}
