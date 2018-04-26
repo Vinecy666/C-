@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main()
+{
+   int i,n,a[100],t,j;
+	
+  while(scanf("%d",&n)!=EOF&&n!=0)
+  {
+  	
+   for(i=0;i<n;i++)
+   {
+   	scanf("%d",&a[i]);
+   	
+   }
+   j = 0;
+   for(i=1;i<n;i++)
+   {
+   	if(a[i]<a[j])
+   	{
+   	j=i;	//比大小，但不交换。 
+	}
+   }
+   t = a[j];
+   a[j]=a[0];
+   a[0]=t;
+   for(i=0;i<n-1;i++)
+   {
+   	printf("%d ",a[i]);
+
+   }
+   printf("%d\n",a[n-1]);
+  }
+   return 0;
+} 
