@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main()
+{
+	int i;
+	char a[100],max;
+    while(scanf("%s",a)!=EOF)  
+	{   
+	max=a[0] ;                          //输入一个字符串 
+	for(i=1;a[i]!='\0';i++)
+	{
+		if(a[i]>max)
+		{
+		   max=a[i];
+		}	
+	}                                //找出最大字符 
+	for(i=0;a[i]!='\0';i++)
+	{
+		printf("%c",a[i]);
+		if(a[i]==max)
+		{
+			printf("(max)");
+		}
+	} 
+	printf("\n");
+	}                              //输出 
+} 
