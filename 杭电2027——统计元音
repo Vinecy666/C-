@@ -1,0 +1,41 @@
+#include <stdio.h>
+int main()
+{
+   int i,n,j,num1,num2,num3,num4,num5;
+  
+   while(scanf("%d",&n))
+   num1=0;num2=0;num3=0;num4=0;num5=0;
+   	for(i=0;i<n;i++)
+   	{   char a[100];
+   	    gets(a);
+		for(j=0;a[j]!='\0';j++)
+		{
+			switch(a[j])
+			{
+			    case 'a':num1++;break;
+				case 'e':num2++;break;
+				case 'i':num3++;break;
+				case 'o':num4++;break;
+				case 'u':num5++;
+			}
+     	}
+		
+		
+		if(i<n-1)
+		{
+			printf("a:%d\n",num1);
+		    printf("e:%d\n",num2);
+		    printf("i:%d\n",num3);
+		    printf("o:%d\n",num4);
+		    printf("u:%d\n\n",num5);
+		}else
+		{
+			printf("a:%d\n",num1);
+			printf("e:%d\n",num2);
+			printf("i:%d\n",num3);
+			printf("o:%d\n",num4);
+			printf("u:%d\n",num5);
+		}
+		num1=0;num2=0;num3=0;num4=0;num5=0;	
+	}
+}
