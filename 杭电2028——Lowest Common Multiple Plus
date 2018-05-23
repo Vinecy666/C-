@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main()
+{
+  int i,n,m,t,a[100];
+  while(scanf("%d",&n)!=EOF)
+  {
+      for(i=0;i<n;i++)
+	  {
+	  	  scanf("%d",&a[i]);
+	  }	
+	  t = a[0];
+	  m=1;
+	  for(i=0;i<n;i++)
+	  {
+	  	while(m)
+	  	{
+	  		if((m%t==0)&&(m%a[i]==0))
+	  		{
+	  		   break;	
+			}
+			m++;
+		}
+		t=m;
+	  }
+	  printf("%d\n",m);
+  }	
+} 
