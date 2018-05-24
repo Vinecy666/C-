@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+	int n,i,j,flag;
+	char a[100];
+	int x;
+	scanf("%d\n",&n);
+	while(n--)
+	{
+		scanf("%s",a);
+	    flag = 0;
+		   x=strlen(a);
+		   	for(j=0;j<(x/2);j++)
+		   	{
+		   	   if(a[j]!=a[x-(j+1)])
+				  {
+				  	flag = 1;
+				  	break;
+				  }	
+			}
+			if(flag==0)
+			{
+				printf("yes\n");
+			}else
+			{
+				printf("no\n");
+			}
+	   }	
+ } 
