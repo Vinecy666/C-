@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+	int n,a1,a2,b1,b2,c1,c2;
+	int i,j,s,f,m;
+	scanf("%d",&n);
+	while(n--)
+	{
+	scanf("%d %d %d %d %d %d",&a1,&b1,&c1,&a2,&b2,&c2);
+		s=a1+a2;f=b1+b2;m=c1+c2;
+		if(m>59)
+		{
+			m=m-60;
+			f++;
+		}
+		if(f>59)
+		{
+			f=f-60;
+			s++;
+		}
+		printf("%d %d %d\n",s,f,m);
+	}
+	return 0;
+	
+} 
