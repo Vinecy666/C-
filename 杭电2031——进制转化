@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main()
+{
+	int n,r,i,j;
+	int a[100];
+	while(scanf("%d%d",&n,&r)!=EOF)
+	{
+		if(n<0)
+		{
+			printf("-");
+			n = -n;
+		}
+		i=0;
+		while(n)
+		{
+			a[i]= n%r;
+			n = n/r;
+			i++;
+		}
+		for(j=i-1;j>=0;j--)
+		{
+			if(a[j]>=10)
+			{
+				printf("%c",a[j]+55);
+			}else
+			{
+				printf("%d",a[j]);
+			}
+		}
+		printf("\n");
+	}
+	
+}
