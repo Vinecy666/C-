@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+   int a[100];
+   int n,k;
+   int i,j;
+   int sum = 0;
+   cin>>n>>k;
+   memset(a,0,sizeof(a));
+   for(i=1;i<=k;i++)
+   {
+      for(j=1;j<=n;j++)
+	  {
+	      if(j%i==0)
+		  {
+		    a[j]=!a[j]; 
+		  }	
+      }	
+   }
+   for(i=1;i<=n;i++)
+   {
+   	if(a[i]!=0)
+   	{
+   		sum++;
+	}
+   }
+   printf("%d",sum);	
+} 
