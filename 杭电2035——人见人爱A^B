@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+	int n,m,x,i;
+    while(scanf("%d%d",&n,&m)!=EOF&&(n!=0&&m!=0))
+	{
+	x=n;
+    for(i=1;i<m;i++)
+    {
+    	x = (x*n)%1000;
+	}
+	printf("%d\n",x);	
+	}
+}
