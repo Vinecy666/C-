@@ -1,0 +1,40 @@
+#include <stdio.h>
+struct
+{
+	int start;
+	int end;
+}TV[100];
+int main()
+{
+	int n;
+	int i,j,sum;
+	while(scanf("%d",&n)!=EOF&&n!=0)
+	{
+		for(i=0;i<n;i++)
+		{
+			scanf("%d %d",&TV[i].start,&TV[i].end);
+		}                                  //输入每个节目的开始和结束 
+		for(i=0;i<n;i++)
+		{
+			for(j=0;j<n-i-1;j++)
+			{
+				if(TV[j].end>TV[j+1].end)
+				{
+				   TV[100]=TV[j];
+				   TV[j]=TV[j+1];
+				   TV[j+1]=TV[100]; 
+				}
+			}
+		}                                  //将每个节目的结束时间进行升序排序 
+		sum = 1;                              
+	    for(i=0,j=1;j<n;j++)
+		{
+		   if(TV[j].start>=TV[i].end)
+		   {
+		   	  sum++;
+		   	  i = j;
+		   }	
+	    }                                 //判断后一个节目的开始是否大于等于前一个节目的结束，若是，sum++	
+    printf("%d\n",sum); 
+	}
+}
