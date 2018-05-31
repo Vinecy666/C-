@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    int m;
+    char a[55];
+    scanf("%d", &m);
+    while(m--)
+    {
+        scanf("%s", a);
+        int i, q=0, w=0, e=0, r=0;
+        for(i=0; a[i]!=0; i++)
+        {
+            if(a[i]<='z' && a[i]>='a')
+                q = 1;
+            if(a[i]<='Z' && a[i]>='A')
+                w = 1;
+            if(a[i]<='9' && a[i]>='0')
+                e = 1;
+            if(a[i]=='!' || a[i]=='~' || a[i]=='@' || a[i]=='#' || a[i]=='$' || a[i]=='%' || a[i]=='^')
+                r = 1;
+        }
+        if(q+w+e+r >= 3 && strlen(a) <= 16 && strlen(a) >= 8)
+            printf("YES\n");
+        else
+            printf("NO\n");
+    }
+}
