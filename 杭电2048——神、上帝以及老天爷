@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+	int i,n,j;
+	long long a[22];
+	a[1]=0;
+	a[2]=1;
+	for(j=3;j<=20;j++)
+	{
+	   a[j]=(j-1)*(a[j-2]+a[j-1]);
+	}
+	scanf("%d",&n);
+	while(n--)
+	{   
+	    double k=1;  
+	    int m;
+	    scanf("%d",&m);
+		for(i=1;i<=m;i++)
+		{
+		    k = k*i;
+		}
+		printf("%.2llf%%\n",a[m]/k*100);
+	}
+	return 0;
+}
