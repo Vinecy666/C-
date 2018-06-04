@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int n;
+	while(cin>>n)
+	{
+		__int64 a[50];    //用64位储存
+	    a[1] = 3;
+	    a[2] = 8;
+	    int i;
+	    for(i = 3;i < 50;i++)
+	    {
+	    	 a[i] = a[i-1]*2 + 2*a[i-2];
+		}
+	cout<<a[n]<<endl;
+	}
+}
