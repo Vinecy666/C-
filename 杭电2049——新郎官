@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main()
+{
+   long long a[23]={0,0,1};
+   int i;
+   for(i=3;i<=20;i++)
+   {
+       a[i]=(i-1)(a[i-1]+a[i-2]);
+   }
+   int x,n,m;
+   scanf("%d",&x);
+   while(n--)
+   {
+       long long sum1=1,sum2=1;
+       scanf("%d%d",&n,&m);
+       for(i=n;i>n-m;i--)
+			sum1*=i;
+       for(i=2;i<=m;i++)
+			sum2*=i;
+       printf("%I64d\n",sum1/sum2*a[m]);
+    }
