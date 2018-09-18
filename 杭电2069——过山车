@@ -1,0 +1,49 @@
+#include <iostream>
+#include <stdio.h>
+#include <memory.h>
+using namespace std;
+const int N = 505;
+bool map[N][N],flag[N];
+int pre[N];
+int n,m,num;
+//匈牙利算法 （二分匹配） 
+int find(int cur)       //cur为当前女生 
+{
+	int i;
+	for(i=1;i<=m;i++)   //被匹配的男生 
+	{
+		if(map[cur][i]&&!flag[i])  //该男生未被匹配 
+		{
+			flag[i]=true;          //这次匹配中，标记该男生已匹配 
+			if(pre[i]==-1||find(pre[i])) //该男生没有被匹配 or该男生继续找其他男生 
+			{
+				pre[i]=cur;         //男生i属于女生cur 
+				return 1;
+			}
+		}
+	}
+	return 0;
+}
+int main()
+{
+	int i,girl,boy,sum;
+	while(scanf("%d",&num,&num),num)
+	{
+		scanf("%d %d",&n,&m);      //n是女生数量，m是男生数量 
+		memset(map,false,sizeof(map));
+		memset(pre,-1,sizeof(pre));
+		for(i=0;i<num;i++)
+		{
+			scanf("%d%d",&girl,&boy);
+			map[girl][boy]=true;   //可以匹配 
+		}
+		sum = 0;
+		for(i=1;i<=n;i++)          //女生去匹配男生 
+		{
+			memset(flag,0,sizeof(flag));   //每次重新标记0 
+			sum+=find(i);
+		}
+		printf("%d",sum);
+	}
+	return 0;
+}
