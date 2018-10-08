@@ -1,49 +1,55 @@
-#include<stdio.h>
-#include<string.h>
-#include<algorithm>
-using namespace std;
-#define M 10000005
+#include <iostream>
+#include <string>
+#include  <algorithm>
+using namespace std; 
+#define M 1000005
 int pre[M];
-int sum[M];int k;
+int sum[M];
+int k;
 int find(int N)
-{	
-    return pre[N]==N?N:pre[N]=find(pre[N]);
+{
+	if(pre[N]==N)
+	  return N;
+	else
+	  return pre[N]=find(pre[N]);
 }
 void join(int x,int y)
-{	int fx=find(x),fy=find(y);	
-    if(fx==fy)	
-	return;	
-	if(fx!=fy)	
-	{	
-	     pre[fx]=fy;
-		 sum[fy]+=sum[fx];
-		 k=max(k,sum[fy]);	
+{
+	int fx=find(x);
+	int fy=find(y);
+	if(fx!=fy)
+	{
+		pre[fx]=fy;
+		sum[fy]+=sum[fx];
+		k=max(k,sum[fy]);
 	}
 }
 int main()
-{	
-    int i,n,a,b;	
-	while(scanf("%d",&n)!=EOF)
-	{		
-	   for(i=1;i<M;i++)//sum[M]3?ê??ˉ?ù?a1￡? 	
-	  {
-		pre[i]=i;			
-		sum[i]=1;		
-	  }		
-	    if(n==0)	
-	    printf("1\n");		
-		else		
-		{			
-		     k=0;		    
-			 while(n--)
-			 {			
-			   scanf("%d %d",&a,&b);			
-			   join(a,b);
-			 }			    
-			 printf("%d\n",k);	   
-		}
-	}	
+{
+	int i,n,a,b;
+	while(cin>>n)
+	{
+		for(i=1;i<M;i++)
+		{
+			pre[i]=i;
+			sum[i]=1;
+		 } 
+		 if(n==0)
+		 cout<<'1'<<endl;
+		 else
+		 {
+		 	k=0;
+		 	while(n--)
+		 	{
+		 	  cin>>a>>b;
+			   join(a,b);	
+			}
+			cout<<k<<endl;
+		 }
+	}
 	return 0;
 }
+
+
 
 
