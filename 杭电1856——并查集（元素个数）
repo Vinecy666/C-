@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<string.h>
+#include<algorithm>
+using namespace std;
+#define M 10000005
+int pre[M];
+int sum[M];int k;
+int find(int N)
+{	
+    return pre[N]==N?N:pre[N]=find(pre[N]);
+}
+void join(int x,int y)
+{	int fx=find(x),fy=find(y);	
+    if(fx==fy)	
+	return;	
+	if(fx!=fy)	
+	{	
+	     pre[fx]=fy;
+		 sum[fy]+=sum[fx];
+		 k=max(k,sum[fy]);	
+	}
+}
+int main()
+{	
+    int i,n,a,b;	
+	while(scanf("%d",&n)!=EOF)
+	{		
+	   for(i=1;i<M;i++)//sum[M]3?ê??ˉ?ù?a1￡? 	
+	  {
+		pre[i]=i;			
+		sum[i]=1;		
+	  }		
+	    if(n==0)	
+	    printf("1\n");		
+		else		
+		{			
+		     k=0;		    
+			 while(n--)
+			 {			
+			   scanf("%d %d",&a,&b);			
+			   join(a,b);
+			 }			    
+			 printf("%d\n",k);	   
+		}
+	}	
+	return 0;
+}
+
+
