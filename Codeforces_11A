@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main()
+{
+	int n,m;
+	scanf("%d %d",&n,&m);
+	int a[n+1];
+	int sum=0;
+	for(int i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+		while(i>=1&&a[i-1]>=a[i])
+		{
+			a[i]+=m;
+			sum++;
+		}
+	}
+	printf("%d",sum);
+	
+} 
