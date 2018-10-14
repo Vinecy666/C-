@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	   char a[102];
+	   scanf("%s",a);
+		int len = strlen(a);
+     	int i=0;
+     	if(a[0]!='/')
+		{
+		   len++; 
+		   for(int i=len-1;i>=0;i--)
+		     a[i+1]=a[i];
+		     a[0]='/'; 
+		}
+	    while(i<len)
+		{
+			if(a[i]=='/'&&a[i+1]=='/')
+			{
+				for(int j=i;j<=len;j++)
+					a[j]=a[j+1];
+				len--;
+			}else 
+			{
+				i++;
+			}
+		}
+		if(len>1&&a[len-1]=='/')
+		{
+			for(int i=0;i<len-1;i++)
+		    printf("%c",a[i]);
+		}
+		else
+		printf("%s",a);
+}
+	
+
+
