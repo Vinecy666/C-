@@ -1,12 +1,11 @@
 #include <iostream>
 using namespace std;
+int n,sum;
 int main()
 {
-	int n;
-        cin>>n;
-	string a[31]={"0","1","2","3","4","5","6","7","8","9","10",
-	"11","12","13","14","15","16","17","ABSINTH","BEER" , "BRANDY", 
-	"CHAMPAGNEC", "GIN", "RUM", "SAKE", "TEQUILA", "VODKA", "WHISKEY", "WINE"};
+    cin>>n;
+	string a[31]={"ABSINTH","BEER","BRANDY","CHAMPAGNE","GIN","RUM","SAKE","TEQUILA","VODKA","WHISKEY","WINE",
+	"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17"};
 	string s;
 	int sum=0;
 	while(n--)
@@ -16,7 +15,7 @@ int main()
 		  {
 		  	 if(s==a[i])
 			 sum++;
-	          }
+	      }
     }
 	
 	cout<<sum;
