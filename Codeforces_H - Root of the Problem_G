@@ -1,0 +1,20 @@
+#include <iostream>
+#include <math.h>
+#include <stdlib.h>
+using namespace std;
+int main()
+{
+	int b,n,a,small,big,x,y;
+	while(cin>>b>>n&&b+n)
+	{
+		small=int(pow(b,1.0/n));
+		big=int(pow(b,1.0/n))+1;
+		x=abs((int)pow(small,n)-b);
+		y=(int)pow(big,n)-b;
+		if(x>y)
+		cout<<big<<endl;
+		else
+		cout<<small<<endl;
+	}
+	
+}
