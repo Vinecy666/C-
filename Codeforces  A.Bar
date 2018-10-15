@@ -7,7 +7,7 @@ int main()
 	scanf("%d",&n);
 	string a[31]={"0","1","2","3","4","5","6","7","8","9","10",
 	"11","12","13","14","15","16","17","ABSINTH","BEER" , "BRANDY", 
-	"HAMPAGNEC", "GIN", "RUM", "SAKE", "TEQUILA", "VODKA", "WHISKEY", "WINE"};
+	"CHAMPAGNEC", "GIN", "RUM", "SAKE", "TEQUILA", "VODKA", "WHISKEY", "WINE"};
 	string s;
 	int sum=0;
 	while(n--)
