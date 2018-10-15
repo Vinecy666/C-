@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    int a,b;
+	cin>>n;
+	string s;
+	int sum=0,flag = 0;
+	while(n--)
+	{
+		cin>>s>>a>>b;
+		if(a>=2400&&b>a)
+		{
+           flag=1;
+		}
+	}
+    if(flag==1)
+    cout<<"YES"<<endl;
+    else
+	cout<<"NO"<<endl;	
+} 
