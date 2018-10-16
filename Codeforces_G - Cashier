@@ -6,9 +6,7 @@ int main()
 	cin>>n>>l>>m;
 	if(n==0)
 	{
-		sum=l/m;
-	    cout<<sum<<endl;
-	    return 0;
+		sum+=l/m;
 	}else
 	{
 	 int a[n+1],b[n+1];
@@ -16,20 +14,15 @@ int main()
 	 {
 	 	cin>>a[i]>>b[i];
 	 }
-	 if(a[1]>=m)
+	 	sum+=a[0]/m;
+	 for(int i=1;i<n-1;i++)
 	 {
-	 	sum=a[1]/m;
+	 	//if((a[i+1]-(b[i]+a[i]))>=m)
+	 		sum+=(a[i+1]-(b[i]+a[i]))/m;
 	 }
-	 for(int i=1;i<n;i++)
-	 {
-	 	if((a[i]-b[i-1])>=m)
-	 	{
-	 		sum+=(a[i]-b[i-1])/m;
-		}
-	 }
-	 if((l-b[n-1])>m)
-	   sum+=(l-b[n-1])/m;
+
+	   sum+=(l-(b[n-1]+a[n-1]))/m;
 	  cout<<sum<<endl;
-	 
+
 	}
-} 
+}
