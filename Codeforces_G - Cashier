@@ -22,7 +22,6 @@ int main()
 	 }
 
 	   sum+=(l-(b[n-1]+a[n-1]))/m;
-	  cout<<sum<<endl;
-
 	}
+	cout<<sum<<endl;
 }
