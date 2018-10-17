@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	int a[1004];
+	char s[1004];
+	int i,flag,sum;
+	while(scanf("%s",s)!=EOF)
+	{
+		i=0,sum=0,flag = 0;
+		memset(a, 0, sizeof(a));
+		while(s[i]!='\0')
+		{
+			if(s[i]=='5')
+			  flag = 0;
+			else
+			{
+				if(flag == 0)
+				{
+					sum++;
+					flag = 1;
+				}
+				a[sum]=a[sum]*10+(s[i]-'0');
+			}
+			i++;
+		}
+		sort(a,a+sum+1);
+		for(i=1;i<sum;i++)
+		{
+			printf("%d ",a[i]);
+		}
+		printf("%d\n",a[sum]);
+	}
+}
+ 
