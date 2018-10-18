@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int N;
+	int i,sum;
+	while(cin>>N)
+	{
+		i = 1;
+		sum =0;
+		while(i!=N+1)
+		{
+			if( i<=N)
+			{
+				i*=2;
+				sum++; 
+			}
+			else
+			{
+				i = 2*(i-N)-1;
+				sum++;
+			}
+		}
+		sum++;
+		cout<<sum<<endl;
+	}
+	
+} 
