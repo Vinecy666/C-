@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int p,q,e,l,num;
+	while(cin>>p>>q>>e>>l)
+	{
+		int n = p*q;
+		int f=(p-1)*(q-1);
+		int d =1;
+		while(d*e%f!=1)
+		   d++;
+		for(int i=1;i<=l;i++)
+		{
+			cin>>num;
+			int m = 1;
+			for(int j =1;j<=d;j++)
+			{
+				m = m*num;
+				m = m %n;
+			}
+			cout<<(char)m;
+		}
+		cout<<endl;
+	}
+}
