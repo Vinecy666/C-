@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char a[1000003];
+    gets(a);
+    int arr[26];
+    int big = 0,flag;
+    memset(arr,0,sizeof(arr));
+    for(int i =0;a[i]!='\0';i++)
+    {
+        arr[a[i]-'a']++;
+    }                     //标记每个字符出现的次数 
+    for(int i =0;i<26;i++)
+    {
+        if(arr[i]>big)
+          big = arr[i];
+    }                      //找出出现次数最多的字符  
+    for(int i = 0;i<26;i++)
+    {
+        if(big==arr[i])
+        {
+            printf("%c",i+'a');
+            break;
+        }
+    }
+} 
