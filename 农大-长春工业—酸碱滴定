@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+	int n;
+	float a,b,c,k;
+	scanf("%d",&n);
+	for(int i =0;i<n;i++)
+	{
+			scanf("%f%f%f",&a,&b,&c);
+			k=a*c/b;
+			k = k*1000;
+		    int g = (int)k%10;
+		    int s = (int)k/10%10;
+			if(g==5&&k-(int)k==0.0&&s%2==0)
+       	{
+       	    k=(int)k/10;
+       		k=k/100;
+		}
+	      else
+         {
+             k = k/1000;
+         }
+         printf("%.2f\n",k);
+	}
+} 
