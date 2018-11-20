@@ -1,0 +1,38 @@
+#include <iostream>
+#include <stdio.h>
+#include <cstring>
+using namespace std;
+int main()
+{
+      int data[10000];
+	  int digit;
+	  int i,j,k,r;
+	  int n;
+	  memset(data,0,sizeof(data));
+	  data[0]=1;
+	  data[1]=1;
+	  digit=1;
+	 cin>>n;
+	 for(i=1;i<=n;i++)
+	 {
+	   for(j=1;j<=digit;j++)
+	 	data[j]*=i;
+	   for(j=1;j<=digit;j++)
+	    {
+	    	 if(data[j]>10)
+	    	 {
+	    	 	for(r=1;r<=digit;r++)
+	    	 	{
+	    	 		if(data[digit]>9)
+	    	 		  digit++;
+	    	 		data[r+1]+=data[r]/10;
+	    	 		data[r]=data[r]%10;
+				 }
+			 }
+		}	
+	 } 
+	 printf("%d!=",n);
+	 for(k=digit;k>0;k--)
+	   cout<<data[k];
+	 return 0;	
+} 
