@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<string>
+int a[100003]={0};
+int main()
+{
+	int n,m,sum,max,flag1,flag2,k;
+	int i,j;
+	while(scanf("%d",&n)!=EOF)
+	{
+		k = 1;
+		while(k<=n)
+		{
+			scanf("%d",&m);
+			max=-1005;
+			sum = 0;
+			j = 1; 
+			for(i=1;i<=m;i++)
+			{
+			  scanf("%d",&a[i]);
+			  sum+=a[i];
+			   if(sum>max)
+				{
+					 max = sum;
+					 flag1 = j;
+					 flag2 = i;
+				}
+				if(sum<0)
+				{
+					sum=0;
+					j = i+1;
+				}
+				
+		   }
+		   printf("Case %d:\n",k);
+		   printf("%d %d %d\n",max,flag1,flag2);
+		   if(k<n)
+		    printf("\n");
+		   k++;
+			}
+	}
+}
