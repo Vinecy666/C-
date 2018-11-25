@@ -1,0 +1,80 @@
+#include <iostream>
+#include <Cstring>
+
+using namespace std;
+
+void rever(char word[],int s,int e)//翻转
+{
+	char temp;
+	for(s,e;s < e;s++,e--)
+	{
+		temp = word[s];
+		word[s] = word[e];
+		word[e] = temp;
+	}
+}
+int main()
+{
+
+	char word[1000];
+	int n;
+
+	while(cin>>n)
+	{
+	getchar();//得到回车
+	for(int i = 0;i < n;i++)
+	{
+		int j,s = 0,e ;
+		gets(word);
+		for(j = 0;j <= strlen(word);j++)
+		{
+			
+			if(word[j] == ' '||word[j] == NULL)//e为空格或末尾的前一个位置，s为后一个位置
+			{
+				e = j - 1;
+				rever(word,s,e);
+				s = j + 1;
+
+			}
+		}
+		puts(word);
+		
+	}
+	}
+	return 0;
+}
+
+//格式不对的代码
+#include <iostream>
+#include <cstring>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+	int n;
+	while(scanf("%d",&n)!=EOF)
+	{
+		getchar();
+	    while(n--)
+	  {
+		 string s;
+		 getline(cin,s);
+		 int len = s.length();
+		 int k =0;
+		 for(int i = k;i<len;i++)
+		 {
+		 	if(s[i]==' ')
+		 	{
+		 		for(int j = i-1;j>=k;j--)
+		 	      cout<<s[j]; 
+		 	    cout<<' ';
+		 	    k = i;
+		    }
+		}
+		for(int i = len-1;i>k;i--)
+		  cout<<s[i];
+		  //cout<<"aaaa";
+		cout<<endl;
+	  }
+   }
+}
