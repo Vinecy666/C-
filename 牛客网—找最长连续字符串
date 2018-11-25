@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+   string s;
+   int flag ;
+   int sum=1,max = 0;
+   cin>>s;
+   for(int i =0;i<s.length();i++)
+   {
+        if(s[i]==s[i-1]+1)
+        {
+        	sum++;
+        if(sum>max)
+        {
+		   max = sum;
+		   flag = i;
+        }
+		   
+		} else
+		{
+			sum = 1;
+		}
+	}
+	//cout<<flag<<' '<<max;
+	for(int i = flag-max+1;i<=flag;i++)
+	   cout<<s[i];
+	cout<<endl;
+} 
