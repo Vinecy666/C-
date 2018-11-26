@@ -1,0 +1,24 @@
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+#include <set>
+#include <sstream>
+using namespace std;
+int main()
+{
+    string str1,str2;
+    while(getline(cin,str1))
+    {
+ 
+        if(str1 == "#")
+            break;
+        istringstream stream(str1);
+        set<string>Set;//定义一个集合,名为Set，数据类型string,在set容器中的每一个值都唯一，则单词不会重复统计
+        while(stream>>str2) //抽取stream中的值到str2 
+        {
+            Set.insert(str2);    //将str2插入Set中
+        }
+        cout<<Set.size()<<endl;   //输出Set中的元素个数
+    }
+    return 0;
+}
