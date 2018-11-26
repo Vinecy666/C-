@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+    __int64 a[55]={0,1};   //必须定义成long long  或__int64
+	int n,i;	
+	for(i = 2;i<=50;i++)
+		  a[i]=a[i-1]+a[i-2];
+	while(scanf("%d",&n)!=EOF&&n!=-1)
+	
+		printf("%I64d\n",a[n]);    //输出必须得是%I64d类型
+	return 0;
+	
+	
+}
