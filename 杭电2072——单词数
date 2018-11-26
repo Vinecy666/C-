@@ -22,3 +22,30 @@ int main()
     }
     return 0;
 }
+
+
+//若将set集合写在循环外面，则每个案例之后要清空
+#include <iostream>
+#include <string>
+#include <set>
+#include <sstream>
+using namespace std;
+int main()
+{
+	string str1 ,str2;
+	set<string> Set;
+	while(getline(cin,str1))
+	{
+		if(str1=="#")
+		 break;
+		istringstream stream(str1);
+		//set<string> Set;
+		while(stream>>str2)
+		{
+			Set.insert(str2);
+		}
+		cout<<Set.size()<<endl;
+		Set.clear();
+	}
+	return 0;
+}
