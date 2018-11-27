@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <math.h>
+int main(){
+	int n,m;
+	while(~scanf("%d %d",&n,&m) && (n || m))
+	{
+		if((int)sqrt(n * n - 4 * m) == sqrt(n * n - 4 * m) )
+		printf("Yes\n");
+		else
+		printf("No\n");
+	}
+}
