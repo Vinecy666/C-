@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define MAX 1000000
+int a[MAX];
+int main()
+{
+    memset(a,0,sizeof(a));
+	int n,m;
+	char c[15];
+	int i ,j;
+	 for(i = 4;i<=1000000;i++)
+	{
+		memset(c,0,sizeof(c));
+		itoa(i,c,10);
+		for(j = 0;j<strlen(c);j++)
+		{
+			if(c[j]=='4'||c[j]=='6'&&c[j+1]=='2')
+		      a[i]=1;
+			  
+		}
+	}
+	while(scanf("%d%d",&n,&m)!=EOF&&n!=0&&m!=0)
+	{
+	    int	sum = 0;
+		for(i = n;i<=m;i++)
+		{
+			if(a[i]==0)
+			  sum+=1;
+		}
+		printf("%d\n",sum);
+	}
+	return 0;
+  }
