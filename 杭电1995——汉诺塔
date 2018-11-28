@@ -1,0 +1,19 @@
+#include<iostream>
+#include <cstring>
+#include <stdio.h> 
+using namespace std;
+int main()
+{
+	long long t;
+	int n;
+	cin>>n;
+	int x,y;
+	while(n--)
+	{
+		t = 1;
+		cin>>x>>y;
+		for(int i = 0;i<x-y;i++)
+		 t = t*2;
+		printf("%I64d\n",t);  
+	}
+}
