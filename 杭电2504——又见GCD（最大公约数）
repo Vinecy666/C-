@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int gcd(int a,int b)
+{
+    return b==0? a:gcd(b,a%b);
+}                      //判断是否为最大公约数 
+int main()
+{
+  int n;
+  cin>>n;
+  int a,b;
+  while(n--)
+  {
+  	 cin>>a>>b;
+  	 int c = 2*b;
+  	 while(gcd(a,c)!=b)
+  	 {
+  	   c+=b;	
+	 }
+	 cout<<c<<endl;
+  }
+} 
