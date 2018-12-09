@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cstring>
+#include <stdio.h>
+using namespace std;
+int prime[100001];
+int main()
+{
+	int n;
+	cin>>n; 
+	for(int k = 1;k<=n;k++)
+	{
+		memset(prime,0,sizeof(prime));
+		int m;
+		for(int i = 2;i<100000;i++)
+	    {
+	       if(!prime[i])
+		   {
+		   	  for(int j = i+i;j<100000;j+=i)
+		   	  
+		   	    prime[j]=1;
+		   }	
+		} 
+		    scanf("%d",&m);
+		   // printf("%d %d %d",prime[m-2],prime[m],prime[m+2]);
+			if(prime[m]==0&&prime[m+2]==0||prime[m]==0&&prime[m-2]==0)
+		     printf("Case 1: Yes\n");
+		    else
+		     printf("Case 1: No\n");
+		
+	}
+	
+} 
