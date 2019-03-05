@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+char text[101];
+char package[101];
+int top = 0;
+
+int main()
+{
+	while(cin>>text)
+	{
+		int top = 0;
+		package[++top]=text[0];  //将第一个字符设为栈顶
+		for(int i = 1;i<(int)strlen(text);++i) 
+		{
+			if(package[top]=='o'&&text[i]=='o')//判断是否为oo 
+			{
+				if(top>=2&&package[top-1]=='O')//判断是否为ooO 
+				 top-=2;  //若是，直接消去
+				else package[top]='O';  //若是oo则直接将栈顶变为O 
+			}
+			else if(package[top]=='O'&&text[i]=='O') 
+			 top--;  //若为O，则消去栈顶-1； 
+			else package[++top]=text[i]; //若都不成立，则将当前位置的字符放入栈中 
+		}
+		for(int i = 1;i<=top;i++)
+		 cout<<package[i];
+		cout<<endl; 
+	}
+}
