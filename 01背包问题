@@ -1,0 +1,39 @@
+#include <stdio.h>
+#define N 6
+#define W 21
+int B[N][W]={0};
+int w[6]={0,2,3,4,5,9};
+int v[6]={0,3,4,5,8,10};
+void knapsack()
+{
+	int k,c;
+	for(k=1;k<N;k++)         
+	{  
+		for(c=1;c<W;c++)      //c为当前最大容量
+		{
+		   if(w[k]>c)          //当当前物品大于剩余容量 则不偷
+		   {
+		      B[k][c]=B[k-1][c];  
+		   }	
+	       else
+	       {
+	       	int value1 = B[k-1][c-w[k]]+v[k];     //当当前物品重量小于剩余容量 偷的时候
+	       	int value2 = B[k-1][c];               //当当前物品重量小于剩余容量  不偷的时候
+	       	if(value1>value2)                     //两者取最大
+	       	{
+	       		B[k][c]=value1;
+			   }
+			else
+			{
+				B[k][c]=value2;
+			}
+		   }
+		}
+	}
+}
+int main()
+{
+	knapsack();
+	printf("%d\n",B[5][20]);
+	return 0;
+} 
