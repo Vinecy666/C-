@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include<stdlib.h>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int dp[205],m,n,h,Wi[101],Vi[101];
+	while(scanf("%d",&m)==1)
+	{
+		if(m==0) break;
+		else scanf("%d %d",&n,&h);
+		for(int i = 0;i<m;i++)
+		  scanf("%d %d",&Wi[i],&Vi[i]);  //输入部分
+		int V=n+h,ans=0;//V表示 一共可以携带的重量，ans表示总质量
+	    for(int i = 0;i<m;i++)
+		{
+		    memset(dp,0,sizeof(dp));
+			for(int k=0;k<m;k++)
+			{
+			  if(k==i) continue;
+			  for(int j=V;j>=Wi[k];j--)	
+			    dp[j]=max(dp[j],dp[j-Wi[k]]+Vi[k]);
+			}
+			if(h)
+			  ans = max(ans,dp[V-1]+Vi[i]);
+			else
+			  ans = max(ans,dp[V]);	
+		}
+		printf("%d\n",ans);	 
+	}
+	return 0;
+}
