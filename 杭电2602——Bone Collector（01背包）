@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+#define N 1005
+int max(int a,int b)
+{
+	return a>b?a:b;
+}
+int dp[N];
+int main()
+{
+	int n,num,VO,va[N],vo[N];
+	int i,j;
+	scanf("%d",&n);
+	while(n--)
+	{
+		scanf("%d%d",&num,&VO);
+		for(i=1;i<=num;i++)
+		 scanf("%d",&va[i]);
+		for(i=1;i<=num;i++)
+		 scanf("%d",&vo[i]);
+		memset(dp,0,sizeof(dp));
+		for(i=1;i<=num;i++)
+		 for(j=VO;j>=vo[i];j--)
+		  dp[j]=max(dp[j],dp[j-vo[i]]+va[i]);
+		printf("%d\n",dp[VO]);
+	}
+}
