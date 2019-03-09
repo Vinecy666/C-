@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+#define MAX 1001 
+int a[MAX];
+int lis(int x)
+{
+	int num[MAX];
+	for(int i =0;i<x;i++)
+	{    num[i]=1;
+		for(int j=0;j<i;j++)   
+		{
+		  if(a[j]<=a[i])     //标记长度
+		  num[i]=num[j]+1;
+		}
+	
+	}
+	int max=0;
+	for(int i =0;i<x;i++)
+	if(max<num[i]) 
+	  max=num[i];         //将存长度的数组遍历 找出最大的长度值
+ 	return max;
+}
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	for(int i =0;i<n;i++)
+	 scanf("%d",&a[i]);   //输入部分
+	if(lis(n)>=30)       //不降个数大于30 
+		printf("yes\n");
+	else
+		printf("no\n");
+}
