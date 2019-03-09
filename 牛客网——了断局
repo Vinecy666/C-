@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include <string.h>
+#define N 52
+long long a[N];         //数据类型要用long long
+int main()
+{
+    a[1]=0,a[2]=1,a[3]=1;
+	int i;
+	for(i=4;i<=50;i++)
+	 a[i]=a[i-1]+a[i-2]+a[i-3]; 
+	int n;
+	while(scanf("%d",&n)!=EOF)
+	{
+		printf("%lld\n",a[n]); 
+	}
+} 
