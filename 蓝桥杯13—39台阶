@@ -1,0 +1,22 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int ans;
+void f(int n,int step)//n代表阶梯数，step代表已走的步数 
+{
+	if(n<0)
+	  return ;
+	if(n==0&&step%2==0)
+	{
+		ans++;
+		return;
+	}
+	f(n-1,step+1);
+	f(n-2,step+1); 
+}
+int main()
+{
+    f(39,0); 
+	 cout<<ans<<endl; 
+    return 0;
+}
