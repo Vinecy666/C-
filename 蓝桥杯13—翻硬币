@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+//找第一个和最后一个不同
+//最：1.搜索（DFS-递归，BFS-队列，枚举-循环（穷举））
+//    2.dp -小规模（最优路径） 
+//    3.贪心（每一步都直接算） 
+//    4.闭式（找规律） 
+using namespace std;
+int main()
+{
+	string a;
+	string b;
+	getline(cin,a);
+	getline(cin,b); 
+	int n=a.length();
+	int start=-1;
+	int ans = 0; 
+	for(int i =0;i<n;i++)
+	{
+	  if(a[i]!=b[i]){
+	  	if(start == -1) //还没标记第一个位置 
+	  	{
+	  	   start=i;	
+		}else//第一个位置标记已给出 ,现在已经找到了第二个不同地方 
+		{
+			ans+=(i-start);
+			start = -1; 
+		}
+	  }	
+	}
+	cout<<ans<<endl;
+}
