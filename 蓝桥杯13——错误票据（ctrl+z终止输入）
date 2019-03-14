@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int a[100005];
+int main()
+{
+	int k,temp;
+	cin>>k;
+	while(cin>>temp)
+	{
+		a[temp]++;
+	}
+	int start;
+	for(int start=0;start<=100000;start++)
+	{
+		if(a[start]!=0)
+		break;
+	}
+	int m=-1,n=-1;
+	for(int i= start;i<=100000;i++)
+	{
+		if(a[i]==2) n=i;
+		else if(a[i]==0) m=i;
+		if(m!=-1&&n!=-1)
+		 break;
+	}
+	cout<<m<<' '<<n<<endl;
+}
