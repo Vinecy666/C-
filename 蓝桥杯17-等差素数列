@@ -1,0 +1,42 @@
+//先判断是否为素数，并存在一个数组里，然后两重for循环，第一层为公差 ，++，然后依次判断+char是否为素数，再判断数量是否为10
+#include <iostream>
+using namespace std;
+int a[1000000];
+int prime(int x)
+{
+	for(int i =2;i<x;i++)
+	{
+		if(x%i==0)
+		  return 0;
+	}
+	return 1;  //判断是否为素数，若是返回1，反之返回0 
+}
+int main()
+{
+	 for(int i=2;i<100000;i++)
+	 {
+	 	if(prime(i))  //如果i=1； 
+	     {
+	     	a[i]=1; //令a[i]==1； 
+		 }
+	 } 
+	 for(int cha =1;cha<10000;cha++) //公差 
+	 {
+	     for(int i =2;i<10000;i++)   //起始位置 
+		 {
+		      int count;
+			  for(count=0;count<10;count++)	
+			  {
+			  	if(a[i+count*cha]!=1)
+			  	  break;
+			  }
+			if(count==10)
+			{
+				cout<<cha;
+			  return 0;
+			}
+			 
+		 }	
+     }
+     return 0;
+}
