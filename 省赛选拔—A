@@ -1,0 +1,21 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	int n,i,t,minn=2e9,k=0;
+	cin>>n>>t;
+	int s,d;
+	for(int i=1;i<=n;i++)
+	{
+	    cin>>s>>d;
+		while(s<t)
+		  s+=d;
+		if(s<minn)
+		{
+		   k=i;
+		   minn=s;	
+     	}	
+	} 
+	cout<<k<<endl;
+}
